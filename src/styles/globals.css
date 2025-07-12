@@ -2,5 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes blink { 50% { opacity: 0; } }
+.animate-blink { animation: blink 1s steps(1) infinite; }
+
 html { scroll-behavior: smooth; }
 body { @apply bg-base text-gray-200 font-mono; }
+
