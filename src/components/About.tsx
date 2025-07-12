@@ -16,7 +16,7 @@ export default function About() {
         <Reveal direction="left">
           <div className="flex-1 space-y-4">
             {/* Placeholder image */}
-            <div className="w-32 h-32 rounded-full bg-card border border-gray-700" />
+            <div className="w-32 h-32 rounded-full bg-card border border-gray-700" ><img className="rounded-full" src="/_.jpeg" alt="" /></div>
             <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-line">
               {about.summary}
             </p>
