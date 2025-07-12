@@ -1,9 +1,20 @@
-import Sidebar from "../components/Sidebar";
 import "./globals.css";
-import { JetBrains_Mono } from "next/font/google";
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
+import Sidebar from "../components/Sidebar";
+import Loader from "../components/Loader";
 
-export const metadata = { title: "Kulshresth Jangid Portfolio" };
+/* 1️⃣  Import JetBrains Mono (or whatever font you want) */
+import { JetBrains_Mono } from "next/font/google";
+
+/* 2️⃣  Create the font variable */
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono", // optional CSS var
+});
+
+export const metadata = {
+  title: "Kulshresth Jangid | Portfolio",
+  description: "Full‑stack developer & problem solver.",
+};
 
 export default function RootLayout({
   children,
@@ -12,8 +23,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={mono.variable}>
-      <Sidebar />
-      <body>{children}</body>
+        <head>
+            <h1>KJ</h1>
+        </head>
+      <body className="bg-base text-gray-200 font-mono">
+        <Loader>
+          <Sidebar />
+          {children}
+        </Loader>
+      </body>
     </html>
   );
 }
