@@ -54,11 +54,10 @@ export default function Hero() {
               Hire Me
             </a>
             <a
-              href="/Kulshresth-jangid.pdf"
+              href="https://drive.google.com/file/d/1oyy1d1_8wT-MuCxutI1I82onFbqZlUev/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded border border-gray-700 px-6 py-2 text-sm text-white hover:bg-gray-800 transition"
-              download
             >
               <FiDownload className="text-xl" />
               Download CV
