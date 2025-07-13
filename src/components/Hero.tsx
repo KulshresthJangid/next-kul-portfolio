@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiDownload } from "react-icons/fi";
+import { FiMail } from "react-icons/fi"; /* email icon */
 import ShellTyper from "./ShellTyper";
 
 export default function Hero() {
@@ -9,14 +10,17 @@ export default function Hero() {
       id="home"
       className="relative grid min-h-screen w-full grid-cols-1 md:grid-cols-2 items-center gap-12 overflow-hidden px-8 md:pl-[6rem]"
     >
-      {/* Background spiral (optional image in /public) */}
+      {/* Gradient layer */}
+      <div className="absolute inset-0 -z-30 bg-gradient-to-br from-[#051a26] via-[#071925] to-[#001015] opacity-90" />
+
+      {/* Spiral overlay */}
       <img
         src="/spiral.svg"
         alt=""
         className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-40"
       />
 
-      {/* LEFT — Intro Text */}
+      {/* LEFT — Intro text */}
       <div>
         <Reveal>
           <p className="mb-2 text-sm tracking-widest text-accent">Hey, I'm</p>
@@ -30,17 +34,30 @@ export default function Hero() {
 
         <Reveal delay={0.2}>
           <h2 className="mt-2 text-2xl sm:text-4xl font-semibold text-accent">
-            Senior Software Engineer <br /> Full-Stack Developer <br /> System
+            Senior Software Engineer <br /> Full‑Stack Developer <br /> System
             Designer
           </h2>
         </Reveal>
 
         <Reveal delay={0.3}>
           <p className="mt-6 max-w-xl text-sm text-gray-400">
-            Building robust, scalable apps using Java, Spring Boot, Node.js &
+            Building robust, scalable apps with Java, Spring Boot, Node.js &
             React. Passionate about clean architecture, microservices, and
-            solving real-world problems.
+            solving real‑world problems.
           </p>
+        </Reveal>
+
+        {/* 📧  Email / contact info  */}
+        <Reveal delay={0.35}>
+          <div className="mt-4 flex items-center gap-2 text-sm text-gray-300">
+            <FiMail className="text-accent" />
+            <a
+              href="mailto:jangidkulshresth@gmail.com"
+              className="hover:text-accent transition"
+            >
+              jangidkulshresth@gmail.com
+            </a>
+          </div>
         </Reveal>
 
         {/* Buttons */}
@@ -51,7 +68,7 @@ export default function Hero() {
               className="flex items-center gap-2 rounded border border-accent px-6 py-2 text-sm text-accent hover:bg-accent/10 transition"
             >
               <HiOutlineMail className="text-xl" />
-              Hire Me
+              Hire Me
             </a>
             <a
               href="https://drive.google.com/file/d/1oyy1d1_8wT-MuCxutI1I82onFbqZlUev/view?usp=sharing"
@@ -60,13 +77,13 @@ export default function Hero() {
               className="flex items-center gap-2 rounded border border-gray-700 px-6 py-2 text-sm text-white hover:bg-gray-800 transition"
             >
               <FiDownload className="text-xl" />
-              Download CV
+              Download CV
             </a>
           </div>
         </Reveal>
       </div>
 
-      {/* RIGHT — Animated Code Shell */}
+      {/* RIGHT — Animated Shell */}
       <Reveal direction="right">
         <div className="hidden md:block w-full max-w-md mx-auto bg-card border border-gray-800 rounded-xl p-4 shadow-xl">
           <ShellTyper />
