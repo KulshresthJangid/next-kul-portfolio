@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={mono.variable}>
         <head>
-            <h1>KJ</h1>
+            <link rel="icon" href="/_.jpeg" />
         </head>
       <body className="bg-base text-gray-200 font-mono">
         <Loader>

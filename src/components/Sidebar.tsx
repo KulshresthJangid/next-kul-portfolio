@@ -5,7 +5,7 @@ import { FiCircle, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { RiMediumLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 
-const sections = ["home", "projects", "experience", "about", "contact"];
+const sections = ["home", "skills", "projects", "experience", "about", "contact"];
 
 export default function Sidebar() {
   const [active, setActive] = useState("home");
