@@ -4,11 +4,27 @@ import { useState, useEffect } from "react";
 import Reveal from "./Reveal";
 
 const skillGroups = {
-  Languages: ["Java", "JavaScript", "TypeScript", "Python", "Go", "Rust", "Ruby", "SQL"],
+  Languages: [
+    "Java",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "Go",
+    "Rust",
+    "Ruby",
+    "SQL",
+  ],
   Backend: ["Spring Boot", "Express.js", "MeteorJS", "Dialogflow"],
   Frontend: ["React.js", "AngularJS", "React Native", "Flutter", "Bootstrap"],
   Databases: ["MySQL", "MongoDB", "DynamoDB", "MariaDB", "Elasticsearch"],
-  "DevOps & Cloud": ["Docker", "Kubernetes", "AWS", "Jenkins", "CI/CD", "Nginx"],
+  "DevOps & Cloud": [
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "Jenkins",
+    "CI/CD",
+    "Nginx",
+  ],
   Exploring: ["AI", "ML", "Big Data", "Web3", "Data Science"],
 };
 
@@ -38,13 +54,17 @@ export default function Skills() {
     tick();
   }, [activeTab]);
 
+  let skillsDelay = 0.1;
+
   return (
     <section
       id="skills"
       className="border-t border-gray-800 py-20 px-6 sm:px-10 md:px-16 lg:px-24"
     >
       <Reveal>
-        <h2 className="mb-12 text-3xl font-bold text-accent">Skills Terminal</h2>
+        <h2 className="mb-12 text-3xl font-bold text-accent">
+          Skills Terminal
+        </h2>
       </Reveal>
 
       {/* Tab buttons */}
@@ -71,21 +91,25 @@ export default function Skills() {
           {/* Typing command */}
           <p className="text-accent mb-4">
             {typedCmd}
-            {typedCmd.length < `$ load-skills --category "${activeTab.toLowerCase()}"`.length && (
-              <span className="animate-blink">|</span>
-            )}
+            {typedCmd.length <
+              `$ load-skills --category "${activeTab.toLowerCase()}"`
+                .length && <span className="animate-blink">|</span>}
           </p>
 
           {/* Skills pills */}
+
           {showSkills && (
             <div className="flex flex-wrap gap-3 text-green-400">
+
               {skillGroups[activeTab].map((skill) => (
-                <span
-                  key={skill}
-                  className="rounded border border-green-700 bg-green-900/20 px-3 py-1 hover:bg-green-800/20 transition"
-                >
-                  {skill}
-                </span>
+                <Reveal delay={skillsDelay}>
+                  <span
+                    key={skill}
+                    className="rounded border border-green-700 bg-green-900/20 px-3 py-1 hover:bg-green-800/20 transition"
+                  >
+                    {skill}
+                  </span>
+                </Reveal>
               ))}
             </div>
           )}
