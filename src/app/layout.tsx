@@ -1,6 +1,7 @@
 import "./globals.css";
 import Sidebar from "../components/Sidebar";
 import Loader from "../components/Loader";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import AnimatedCursor from "react-animated-cursor";
 import { JetBrains_Mono } from "next/font/google";
 
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en" className={mono.variable}>
       <body className="bg-base text-gray-200 font-mono">
         {/* ⬇️ Custom cursor */}
+        <SpeedInsights />
         <AnimatedCursor
           innerSize={8}
           outerSize={32}
