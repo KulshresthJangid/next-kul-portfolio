@@ -88,7 +88,7 @@ export default function Sidebar() {
           <FiTwitter size={30} />
         </a>
         <a
-          href="https://medium.com/@your_medium_username"
+          href="https://medium.com/@kulshresthjangid"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-accent transition"
