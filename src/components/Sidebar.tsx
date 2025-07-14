@@ -79,7 +79,7 @@ export default function Sidebar() {
           <FiLinkedin size={30} />
         </a>
         <a
-          href="https://twitter.com/your_handle_here"
+          href="https://x.com/nerdy_ge3k"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-accent transition"
