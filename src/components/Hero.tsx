@@ -1,8 +1,10 @@
+"use client"
+
 import Reveal from "./Reveal";
 import { HiOutlineMail } from "react-icons/hi";
-import { FiDownload } from "react-icons/fi";
-import { FiMail } from "react-icons/fi"; /* email icon */
+import { FiDownload, FiMail } from "react-icons/fi";
 import ShellTyper from "./ShellTyper";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Hero() {
   return (
@@ -12,13 +14,6 @@ export default function Hero() {
     >
       {/* Gradient layer */}
       <div className="absolute inset-0 -z-30 bg-gradient-to-br from-[#051a26] via-[#071925] to-[#001015] opacity-90" />
-
-      {/* Spiral overlay */}
-      <img
-        src="/spiral.svg"
-        alt=""
-        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-40"
-      />
 
       {/* LEFT — Intro text */}
       <div>
@@ -32,22 +27,34 @@ export default function Hero() {
           </h1>
         </Reveal>
 
+        {/* 🧠 Typing Role Animation */}
         <Reveal delay={0.2}>
-          <h2 className="mt-2 text-2xl sm:text-4xl font-semibold text-accent">
-            Senior Software Engineer <br /> Full‑Stack Developer <br /> System
-            Designer
+          <h2 className="mt-2 text-2xl sm:text-4xl font-semibold text-accent h-[3rem]">
+            <Typewriter
+              words={[
+                "Senior Software Engineer",
+                "Full‑Stack Developer",
+                "System Designer",
+              ]}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={60}
+              deleteSpeed={40}
+              delaySpeed={1800}
+            />
           </h2>
         </Reveal>
 
         <Reveal delay={0.3}>
           <p className="mt-6 max-w-xl text-sm text-gray-400">
-            Building robust, scalable apps with Java, Spring Boot, Node.js &
+            Building robust, scalable apps with Java, Spring Boot, Node.js &
             React. Passionate about clean architecture, microservices, and
             solving real‑world problems.
           </p>
         </Reveal>
 
-        {/* 📧  Email / contact info  */}
+        {/* 📧 Email */}
         <Reveal delay={0.35}>
           <div className="mt-4 flex items-center gap-2 text-sm text-gray-300">
             <FiMail className="text-accent" />
